@@ -1,7 +1,7 @@
 {
-  "name": "satoshi-bitcoin",
-  "version": "1.0.5",
-  "description": "Convert Satoshi <-> Bitcoin",
+  "name": "bgl-units",
+  "version": "1.0.0",
+  "description": "Convert Satoshi units <-> BGL",
   "main": "index.js",
   "engines": {
     "node": ">0.10"
@@ -14,10 +14,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dawsbot/satoshi-bitcoin.git"
+    "url": "git+https://github.com/naftalimurgor/bgl-units.git"
   },
   "keywords": [
     "bitcoin",
+    "bitgesell",
     "satoshi",
     "conversion",
     "cryptocurrency",
@@ -35,12 +36,12 @@
     "decimal",
     "float"
   ],
-  "author": "Dawson Botsford (https://dawsbot.com)",
+  "author": "Naftali Murgor (https://naftalimurgor.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dawsbot/satoshi-bitcoin/issues"
+    "url": "https://github.com/naftalimurgor/bgl-units/issues"
   },
-  "homepage": "https://github.com/dawsbot/satoshi-bitcoin#readme",
+  "homepage": "https://github.com/naftalimurgor/bgl-units#readme",
   "devDependencies": {
     "browserify": "^17.0.0",
     "chai": "^3.5.0",
