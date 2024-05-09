@@ -1,4 +1,4 @@
-# satoshi-bitcoin
+# bgl-units
 
 
 
@@ -6,20 +6,20 @@
 
 * * *
 
-### satoshi-bitcoin.toBitcoin(satoshi) 
+### bgl-units.toBGL(satoshi) 
 
-Convert Satoshi to Bitcoin
+Convert Satoshi(smallest BGL units) to BGL
 
 **Parameters**
 
-**satoshi**: `number | string`, Amount of Satoshi to convert. Must be a whole number
+**satoshi**: `number | string`, (BGL units) Amount of Satoshi to convert. Must be a whole number
 
 **Returns**: `number`
 
 
-### satoshi-bitcoin.toSatoshi(bitcoin) 
+### bgl-units.toSatoshiUnits(bitcoin) 
 
-Convert Bitcoin to Satoshi
+Convert Bitgesell to Satoshi units
 
 **Parameters**
 

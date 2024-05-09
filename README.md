@@ -1,10 +1,7 @@
-# satoshi-bitcoin
+# bgl-units
+<img src="Icon.png" style="height: 60px;"/>
 
-![](https://badgen.net/bundlephobia/min/satoshi-bitcoin)
-[![🧪 npm test](https://github.com/dawsbot/satoshi-bitcoin/actions/workflows/test.yml/badge.svg)](https://github.com/dawsbot/satoshi-bitcoin/actions/workflows/test.yml)
-[![npm version](https://badge.fury.io/js/satoshi-bitcoin.svg)](http://badge.fury.io/js/satoshi-bitcoin)
-
-> npm module to convert between Satoshi and Bitcoin <b>with lightweight precision</b>.
+> npm module to convert between Satoshi units(smallest denomination for Bitgesell BGL) and BGL <b>with lightweight precision</b>.
 
 <br>
 
@@ -17,11 +14,11 @@
 ## Install
 
 ```bash
-npm install --save satoshi-bitcoin
+npm install --save bgl-units
 
 # OR
 
-yarn add satoshi-bitcoin
+yarn add bglunits
 ```
 
 <br>
@@ -31,12 +28,12 @@ yarn add satoshi-bitcoin
 #### Node.js
 
 ```js
-var sb = require("satoshi-bitcoin");
+var bglunits= require("bgl-units");
 
-sb.toSatoshi(1);
+bglunits.toSatoshiUnits(1);
 //=>100000000
 
-sb.toBitcoin(100000000);
+bglunits.toBGL(100000000);
 //=>1
 ```
 
@@ -45,19 +42,19 @@ sb.toBitcoin(100000000);
 #### Web
 
 ```html
-<!-- package injected as "sb" -->
-<script src="https://rawgit.com/dawsonbotsford/satoshi-bitcoin/master/index.bundle.js"></script>
+<!-- package injected as "bglunits" -->
+<script src="https://rawgit.com/naftalimurgor/bglunits/master/index.bundle.js"></script>
 <script>
-  console.log("One Satoshi equals " + sb.toBitcoin(1) + " Bitcoin");
+  console.log("One Satoshi equals " + bglunits.toBitcoin(1) + " Bitcoin");
 </script>
 ```
 
 <br>
 
-Or download it with `npm install --save satoshi-bitcoin` and reference it as:
+Or download it with `npm install bgl-units` and reference it as:
 
 ```html
-<script src="node_modules/satoshi-bitcoin/index.bundle.js"></script>
+<script src="node_modules/bglunits/index.bundle.js"></script>
 ```
 
 <br>
@@ -66,7 +63,7 @@ Or download it with `npm install --save satoshi-bitcoin` and reference it as:
 
 ```javascript
 try {
-  sb.toSatoshi(false); //Throws TypeError
+  bglunits.toSatoshiUnits(false); //Throws TypeError
 } catch (err) {
   console.log(err);
 }
@@ -76,10 +73,10 @@ try {
 
 ## API
 
-`sb.toSatoshi(number || string)`
-`sb.toBitcoin(number || string)`
+`bglunits.toSatoshiUnits(number || string)`
+`bglunits.toBGL(number || string)`
 
-[Read more on the Wiki](https://github.com/dawsonbotsford/satoshi-bitcoin/blob/master/wiki/index.md)
+[Read more on the Wiki](https://github.com/dawsonbotsford/bglunits/blob/master/wiki/index.md)
 
 <br>
 
@@ -90,7 +87,7 @@ try {
   - Satoshi is to Bitcoin as pennies are to the dollar. Except that there are 100,000,000 Satoshi in one Bitcoin.
 
 - Why do I need a module when I can just divide or multiply by 100,000,000?
-  - [See here](http://repl.it/zlF/4) - Floating point errors are a problem. So `satoshi-bitcoin` uses a tiny bignum library (big.js) to ensure accurate conversions!
+  - [See here](http://repl.it/zlF/4) - Floating point errors are a problem. So `bgl-units` uses a tiny bignum library (big.js) to ensure accurate conversions!
 
 <br>
 
@@ -104,4 +101,4 @@ npm test
 
 ## License
 
-MIT © [Dawson Botsford](https://dawsbot.com)
+MIT © [Forked from: Dawson Botsford](https://dawsbot.com)
