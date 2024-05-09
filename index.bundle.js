@@ -1,6 +1,6 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.sb = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 /**
- * @module satoshi-bitcoin
+ * @module bgl-units
  */
 
 var Big = require('big.js');
@@ -10,7 +10,7 @@ var conversion = 100000000;
 
 // es6 polyfill
 if (!Number.isInteger) {
-  Number.isInteger = function(num) {
+  Number.isInteger = function (num) {
     return typeof num === 'number' && num % 1 === 0;
   }
 }
@@ -23,49 +23,49 @@ function toNumber(notNum) {
 module.exports = {
 
   /**
-   * Convert Satoshi to Bitcoin
-   * @param {number|string} satoshi Amount of Satoshi to convert. Must be a whole number
+   * Convert Satoshi(smallest BGL units) to BGL
+   * @param {number|string} satoshi (BGL units) Amount of Satoshi to convert. Must be a whole number
    * @throws {TypeError} Thrown if input is not a number or string
    * @throws {TypeError} Thrown if input is not a whole number or string format whole number
    * @returns {number}
    */
-  toBitcoin: function(satoshi) {
+  toBGL: function (satoshi) {
     //validate arg
     var satoshiType = typeof satoshi;
     if (satoshiType === 'string') {
       satoshi = toNumber(satoshi);
       satoshiType = 'number';
     }
-    if (satoshiType !== 'number'){
+    if (satoshiType !== 'number') {
       throw new TypeError('toBitcoin must be called on a number or string, got ' + satoshiType);
     }
     if (!Number.isInteger(satoshi)) {
       throw new TypeError('toBitcoin must be called on a whole number or string format whole number');
     }
 
-    var bigSatoshi = new Big(satoshi);
-    return Number(bigSatoshi.div(conversion));
+    var bigSatoshiUnits = new Big(satoshi);
+    return Number(bigSatoshiUnits.div(conversion));
   },
 
   /**
-   * Convert Bitcoin to Satoshi
+   * Convert Bitgesell to Satoshi units
    * @param {number|string} bitcoin Amount of Bitcoin to convert
    * @throws {TypeError} Thrown if input is not a number or string
    * @returns {number}
    */
-  toSatoshi: function(bitcoin) {
+  toSatoshiUnits: function (BGL) {
     //validate arg
-    var bitcoinType = typeof bitcoin;
-    if (bitcoinType === 'string') {
-      bitcoin = toNumber(bitcoin);
-      bitcoinType = 'number';
+    var bitgesellType = typeof BGL;
+    if (bitgesellType === 'string') {
+      bitcoin = toNumber(BGL);
+      bitgesellType = 'number';
     }
-    if (bitcoinType !== 'number'){
-      throw new TypeError('toSatoshi must be called on a number or string, got ' + bitcoinType);
+    if (bitgesellType !== 'number') {
+      throw new TypeError('toSatoshi must be called on a number or string, got ' + bitgesellType);
     }
 
-    var bigBitcoin = new Big(bitcoin);
-    return Number(bigBitcoin.times(conversion));
+    var bigBitgesell = new Big(BGL);
+    return Number(bigBitgesell.times(conversion));
   }
 
 };
