@@ -42,8 +42,8 @@ module.exports = {
       throw new TypeError('toBitcoin must be called on a whole number or string format whole number');
     }
 
-    var bigBitgesell = new Big(satoshi);
-    return Number(bigBitgesell.div(conversion));
+    var bigSatoshiUnits = new Big(satoshi);
+    return Number(bigSatoshiUnits.div(conversion));
   },
 
   /**
